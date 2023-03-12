@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@api": ["api"],
+      "@api*": ["api*"],
+      "@components": ["components"],
+      "@components*": ["components*"],
+
+      "@reuse_button": ["components/Buttons"],
+      "@reuse_button*": ["components/Buttons*"],
+      "@reuse_modal": ["components/Modals"],
+      "@reuse_modal*": ["components/Modals*"],
+
+      "@constants": ["constants"],
+      "@constants*": ["constants*"],
+      "@data": ["data"],
+      "@data*": ["data*"],
+      "@page": ["pages"],
+      "@page*": ["pages*"],
+
+      "@auth": ["pages/Auth"],
+      "@auth*": ["pages/Auth/*"],
+
+      "@board": ["pages/Board"],
+      "@board*": ["pages/Board*"],
+      "@board_component": ["pages/Board/components"],
+      "@board_component*": ["pages/Board/components*"],
+
+      "@main": ["pages/Main"],
+      "@main*": ["pages/Main*"],
+      "@main_component": ["pages/Main/components"],
+      "@main_component*": ["pages/Main/components*"],
+
+      "@user": ["pages/UserProfile"],
+      "@user*": ["pages/UserProfile*"],
+
+      "@store": ["store"],
+      "@store*": ["store*"],
+      "@styles": ["styles"],
+      "@styles*": ["styles*"],
+      "@utils": ["utils"],
+      "@utils*": ["utils*"]
+    }
+  }
+}

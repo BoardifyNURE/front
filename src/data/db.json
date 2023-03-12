@@ -1,0 +1,67 @@
+{
+  "users": [
+    {
+      "email": "zaba@s.com",
+      "password": "$2a$10$OFzeS/c7o84Y12ntsgoPe.XbQfrZG6YKCn/vrppCiq6L3ghmFuu32",
+      "fullName": "Vasya Pupkin",
+      "followers": [],
+      "following": [],
+      "friends": [],
+      "avatar": "",
+      "bio": "my descr",
+      "id": 1
+    },
+    {
+      "email": "redux@gmail.com",
+      "password": "$2a$10$HgnCaL9B5OSSS07DkhRG2.2ajP0W18O0QSTV7lo8Gj0FyCmLkETZy",
+      "fullName": "Vasya Pupkin",
+      "followers": [],
+      "following": [],
+      "friends": [],
+      "avatar": "",
+      "bio": "",
+      "id": 2
+    }
+  ],
+  "boards": [
+    {
+      "boardName": "wewe",
+      "type": "personal",
+      "columns": [
+        2,
+        1
+      ],
+      "ownerId": 1,
+      "id": 1
+    },
+    {
+      "boardName": "xc",
+      "type": "personal",
+      "columns": [],
+      "ownerId": 1,
+      "id": 2
+    }
+  ],
+  "columns": [
+    {
+      "columnName": "column",
+      "boardId": 1,
+      "tasks": [
+        1,
+        2
+      ],
+      "id": 1
+    },
+    {
+      "columnName": "colummn 2",
+      "boardId": 1,
+      "tasks": [
+        3
+      ],
+      "id": 2
+    }
+  ],
+  "tasks": [],
+  "checklist": [],
+  "todo": []
+}
