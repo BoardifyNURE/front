@@ -1,13 +1,17 @@
 import React from 'react';
 import { Route, Redirect, RouteProps } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
+import { authSelector } from './selectors';
+
 export const PrivateRouter = ({ path, children }: RouteProps) => {
-  const isLogin = true;
+  const isLogin = useSelector(authSelector);
 
   if (!isLogin) {
     return <Redirect to="/login" />;
   }
+
   return (
     <Route exact path={path}>
       {children}

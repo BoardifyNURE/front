@@ -42,7 +42,7 @@ export const LoginForm = () => {
         )}
       </Formik>
       <Box margin="1rem" display="flex" flexDirection="column" alignItems="flex-end">
-        <Text color="gray.500">don`t have account?</Text>
+        <Text color="gray.500">Don`t have an account?</Text>
         <Link to="/singup">
           <Text fontSize="16px" color="#6486ff">
             Sing Up

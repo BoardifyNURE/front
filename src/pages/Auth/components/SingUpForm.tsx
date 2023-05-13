@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Text } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Form, Formik } from 'formik';
 
@@ -49,6 +50,14 @@ export const SingUpForm = () => {
           </Form>
         )}
       </Formik>
+      <Box margin="1rem" display="flex" flexDirection="column" alignItems="flex-end">
+        <Text color="gray.500">Alreaddy have an account?</Text>
+        <Link to="/login">
+          <Text fontSize="16px" color="#6486ff">
+            Login
+          </Text>
+        </Link>
+      </Box>
     </Box>
   );
 };
