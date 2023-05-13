@@ -1,6 +1,7 @@
 import React from 'react';
-import { LoginForm } from '@auth/components/LoginForm';
 import { Flex, Box, Image } from '@chakra-ui/react';
+
+import { LoginForm } from './components/LoginForm';
 
 export const Login = () => (
   <Flex flexDirection="column" marginRight="7rem" marginLeft="7rem">

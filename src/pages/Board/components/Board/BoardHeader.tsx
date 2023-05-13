@@ -1,10 +1,11 @@
 import React from 'react';
 import { Box, Text } from '@chakra-ui/react';
-import { homeIcon, favoriteIcon, menuIcon } from '@constants/icon-link';
-import { BtnProfile } from '@reuse_button/BtnProfile';
-import { selectCurrentBoard } from '@store/selectors';
 import { useSelector } from 'react-redux';
+
 import { BoardHeaderIcons } from './BoardHeaderIcons';
+import { BtnProfile } from '../../../../components/Buttons/BtnProfile';
+import { homeIcon, favoriteIcon, menuIcon } from '../../../../constants/icon-link';
+import { selectCurrentBoard } from '../../../../store/selectors';
 
 interface IProps {
   onOpen: () => void;

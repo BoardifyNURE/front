@@ -11,6 +11,7 @@ import {
   Grid,
 } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
+
 import { ColorsBlock } from './ColorsBlock';
 
 interface IProps {

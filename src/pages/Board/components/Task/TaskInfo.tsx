@@ -14,31 +14,32 @@ import {
   Text,
   useDisclosure,
 } from '@chakra-ui/react';
-import { taskIcon, descriptionLink, checkIcon } from '@constants/icon-link';
-import { ModalCreating } from '@components/Modals/ModalCreating';
-import { CREATECHECKLIST_VALUES, CREATETODO_VALUES } from '@utils/validation';
-import { getPercent } from '@utils/storeFunc';
-import {
-  setChecklistId,
-  toggleCheckList,
-  setDescription,
-  addDescription,
-  addNewCheckList,
-  addNewTodo,
-} from '@board/store/task-slice';
-import { removeTask } from '@board/store/board-slice';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { ContentItem } from './components/ContentItem';
+import { ButtonInTask } from './components/ButtonInTask';
+import { Todo } from './components/Todo';
+import { ColorPopOver } from './components/ColorPopOver';
+import { ModalCreating } from '../../../../components/Modals/ModalCreating';
+import { taskIcon, descriptionLink, checkIcon } from '../../../../constants/icon-link';
 import {
   isOpenChecklistSelector,
   selectChecklist,
   selectTodo,
   checklistIdSelector,
-} from '@store/selectors';
-import { useDispatch, useSelector } from 'react-redux';
-import { IChecklist } from '@page/Board/store/types';
-import { ContentItem } from './components/ContentItem';
-import { ButtonInTask } from './components/ButtonInTask';
-import { Todo } from './components/Todo';
-import { ColorPopOver } from './components/ColorPopOver';
+} from '../../../../store/selectors';
+import { getPercent } from '../../../../utils/storeFunc';
+import { CREATECHECKLIST_VALUES, CREATETODO_VALUES } from '../../../../utils/validation';
+import { removeTask } from '../../store/board-slice';
+import {
+  addNewCheckList,
+  toggleCheckList,
+  addNewTodo,
+  setChecklistId,
+  setDescription,
+  addDescription,
+} from '../../store/task-slice';
+import { IChecklist } from '../../store/types';
 
 interface IProps {
   isOpenTaskInfo: boolean;

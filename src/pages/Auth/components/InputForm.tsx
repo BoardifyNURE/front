@@ -1,7 +1,7 @@
 import React from 'react';
+import { FormControl, Input, FormErrorMessage } from '@chakra-ui/react';
 import { useField } from 'formik';
 
-import { FormControl, Input, FormErrorMessage } from '@chakra-ui/react';
 import { IInput } from '../store/types';
 
 export const InputForm = ({ ...props }: IInput) => {

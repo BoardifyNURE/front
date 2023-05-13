@@ -1,9 +1,10 @@
 import React from 'react';
 import { Box, Text, Link } from '@chakra-ui/react';
 import { Draggable, Droppable } from 'react-beautiful-dnd';
-import { TaskPreview } from '@page/Board/components/Task/TaskPreview';
-import { selectColumnTasks } from '@store/selectors';
 import { useSelector } from 'react-redux';
+
+import { selectColumnTasks } from '../../../../store/selectors';
+import { TaskPreview } from '../Task/TaskPreview';
 
 interface IProps {
   columnName: string;

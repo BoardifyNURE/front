@@ -1,8 +1,9 @@
 import React from 'react';
 import { Button } from '@chakra-ui/react';
-import { changePalette } from '@board/store/task-slice';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+
+import { changePalette } from '../../../store/task-slice';
 
 interface IProps {
   bg: string;

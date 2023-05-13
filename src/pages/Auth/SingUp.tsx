@@ -1,5 +1,6 @@
 import React from 'react';
 import { Flex, Box, Image } from '@chakra-ui/react';
+
 import { SingUpForm } from './components/SingUpForm';
 import { diagram, people } from '../../constants/icon-link';
 

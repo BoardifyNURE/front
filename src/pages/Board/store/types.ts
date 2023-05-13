@@ -1,31 +1,20 @@
-import { IBoard } from '@page/Main/store/types';
+import { IBoard } from '../../Main/store/types';
 
 export interface IBoardState {
   boardId: number | null;
-
   currentBoard: IBoard;
-
   boardColumns: TColumn;
-
   currentColumn: IColumn | null;
-
   columnTasks: TTask;
-
   currentTaskId: number | null;
 }
 export interface ITaskState {
   taskId: number | null;
-
   checklistId: number | null;
-
   isOpenCheckList: boolean;
-
   description: string;
-
   checklist: any;
-
   todoIdInChecklist: any;
-
   todo: any;
 }
 

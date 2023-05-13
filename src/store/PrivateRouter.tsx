@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Route, Redirect, RouteProps } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export const PrivateRouter = ({ path, children }: RouteProps) => {
   const isLogin = true;

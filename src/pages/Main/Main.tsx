@@ -1,9 +1,11 @@
 import React from 'react';
-import { Workspace } from '@main_component/Workspace/Workspace';
 import { Flex } from '@chakra-ui/react';
+
 import '@fontsource/red-hat-display';
-import { Header } from '@main_component/Header';
-import { Sidebar } from '@main_component/Sidebar/Sidebar';
+
+import { Header } from './components/Header';
+import { Sidebar } from './components/Sidebar/Sidebar';
+import { Workspace } from './components/Workspace/Workspace';
 
 export const Main = () => (
   <>

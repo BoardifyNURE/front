@@ -1,9 +1,5 @@
-import { RootState } from '@store/root-slice';
-import { httpService } from '@api/HttpService';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { IBoard } from '@page/Main/store/types';
-import { reorder } from '@utils/storeFunc';
-import { supabase } from '@data/date-base';
+
 import {
   IBoardState,
   IColumn,
@@ -15,6 +11,10 @@ import {
   IResult,
 } from './types';
 import { patchBoard, patchColumns, replaceUrl, reorderQuoteMap } from './helpers';
+import { httpService } from '../../../api/HttpService';
+import { supabase } from '../../../data/date-base';
+import { RootState } from '../../../store/root-slice';
+import { reorder } from '../../../utils/storeFunc';
 
 const initialState: IBoardState = {
   boardId: null,

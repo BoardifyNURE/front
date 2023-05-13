@@ -2,21 +2,17 @@ import React from 'react';
 import { Box, Text, Link, useDisclosure } from '@chakra-ui/react';
 import { Draggable } from 'react-beautiful-dnd';
 import { useDispatch } from 'react-redux';
-import { setCurrentTaskId } from '@board/store/board-slice';
-import { setTaskId, getCurrentCheckList } from '@board/store/task-slice';
+
 import { TaskInfo } from './TaskInfo';
+import { setCurrentTaskId } from '../../store/board-slice';
+import { setTaskId, getCurrentCheckList } from '../../store/task-slice';
 
 interface IProps {
   taskName: string;
-
   id: number;
-
   palette: string;
-
   index: number;
-
   description: string;
-
   columnId: number;
 }
 

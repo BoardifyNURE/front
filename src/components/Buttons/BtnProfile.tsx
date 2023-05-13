@@ -1,7 +1,8 @@
 import React from 'react';
 import { ChakraProvider, Avatar } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
-import { avatar } from '@constants/icon-link';
+
+import { avatar } from '../../constants/icon-link';
 
 interface IProps {
   link: string;

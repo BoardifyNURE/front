@@ -1,20 +1,16 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Image, Button } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 interface IProps {
   path: string;
-
   onClick?: (e: React.SyntheticEvent<HTMLButtonElement>) => void;
-
   altImage: string;
-
   image: string;
 }
 
 const defaultProps = {
-  onClick: () => {},
+  onClick: () => null,
 };
 
 export const BoardHeaderIcons = ({ path, onClick, altImage, image }: IProps) => (

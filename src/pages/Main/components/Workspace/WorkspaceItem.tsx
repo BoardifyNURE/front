@@ -1,8 +1,8 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
 import React from 'react';
 import { Grid, GridItem, Text, Box, Link } from '@chakra-ui/react';
-import { IBoard } from '@page/Main/store/types';
+
 import { BoardPreview } from './BoardPreview';
+import { IBoard } from '../../store/types';
 
 interface IProps {
   array?: IBoard[];
@@ -15,7 +15,7 @@ interface IProps {
 const defaultProps = {
   array: [],
   plus: '+',
-  toggleModal: () => {},
+  toggleModal: () => null,
 };
 
 export const WorkspaceItem = ({ array, boardTitle, plus, linkText, toggleModal }: IProps) => (

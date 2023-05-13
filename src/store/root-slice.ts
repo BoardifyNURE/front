@@ -1,10 +1,11 @@
-import { taskSlice } from '@board/store/task-slice';
-import { boardSlice } from '@board/store/board-slice';
-import { workspaceSlice } from '@main/store/workspace-slice';
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import storage from 'redux-persist/lib/storage';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { persistReducer, persistStore } from 'redux-persist';
-import { userSlice } from '@auth/store/user-slice';
+import storage from 'redux-persist/es/storage';
+
+import { userSlice } from '../pages/Auth/store/user-slice';
+import { boardSlice } from '../pages/Board/store/board-slice';
+import { taskSlice } from '../pages/Board/store/task-slice';
+import { workspaceSlice } from '../pages/Main/store/workspace-slice';
 
 export const rootReducer = combineReducers({
   user: userSlice.reducer,

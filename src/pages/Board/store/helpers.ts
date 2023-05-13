@@ -1,5 +1,5 @@
-import { httpService } from '@api/HttpService';
-import { history } from '@constants/history';
+import { httpService } from '../../../api/HttpService';
+import { history } from '../../../constants/history';
 
 export const reorderQuoteMap = (quoteMap: any, source: any, destination: any) => {
   const prevColumnId = source.droppableId.substring(5);

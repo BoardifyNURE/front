@@ -1,8 +1,8 @@
 import { RootState } from '@store/root-slice';
-import { httpService } from '@api/HttpService';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { supabase } from '@data/date-base';
-import { IWorkspaceState, IBoard } from './types';
+
+import { IWorkspaceState } from './types';
+import { supabase } from '../../../data/date-base';
 
 const initialState: IWorkspaceState = {
   isOpenModal: false,

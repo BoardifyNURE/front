@@ -1,12 +1,12 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import { Login } from '@auth/Login';
-import { Error404 } from '@page/Error404';
-import { SingUp } from '@auth/SingUp';
-import { Main } from '@main/Main';
-import { Board } from '@board/Board';
 
 import { PrivateRouter } from './PrivateRouter';
+import { Login } from '../pages/Auth/Login';
+import { SingUp } from '../pages/Auth/SingUp';
+import { Board } from '../pages/Board/Board';
+import { Error404 } from '../pages/Error404';
+import { Main } from '../pages/Main/Main';
 
 export const Routers = () => (
   <Switch>

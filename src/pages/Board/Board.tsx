@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router';
 import { Box, useDisclosure } from '@chakra-ui/react';
-import { BoardHeader } from '@board/components/Board/BoardHeader';
-import { boardBG } from '@constants/icon-link';
-import { BoardMenu } from '@board_component/Board/BoardMenu';
-import { BoardContent } from '@board_component/Board/BoardContent';
-import { ModalCreating } from '@components/Modals/ModalCreating';
-import { CREATECOLUMN_VALUES } from '@utils/validation';
+import { useParams } from 'react-router';
 import { DragDropContext } from 'react-beautiful-dnd';
-import { setBoardId, getCurrentItems, addNewColumn, onDragEnd } from '@board/store/board-slice';
-import { toggleModal } from '@main/store/workspace-slice';
-import { isOpenModalSelector } from '@store/selectors';
-import '@fontsource/red-hat-display';
 import { useDispatch, useSelector } from 'react-redux';
+
+import { ModalCreating } from '../../components/Modals/ModalCreating';
+import { boardBG } from '../../constants/icon-link';
+import { isOpenModalSelector } from '../../store/selectors';
+import { CREATECOLUMN_VALUES } from '../../utils/validation';
+import { toggleModal } from '../Main/store/workspace-slice';
+import { BoardContent } from './components/Board/BoardContent';
+import { BoardHeader } from './components/Board/BoardHeader';
+import { BoardMenu } from './components/Board/BoardMenu';
+import { setBoardId, getCurrentItems, addNewColumn, onDragEnd } from './store/board-slice';
 
 export const Board = () => {
   const dispatch = useDispatch();

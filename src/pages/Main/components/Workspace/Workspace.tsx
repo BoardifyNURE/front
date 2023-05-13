@@ -1,12 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import { Grid } from '@chakra-ui/react';
 import { useParams } from 'react-router';
-import { ModalCreating } from '@reuse_modal/ModalCreating';
-import { CREATEBOARD_VALUES } from '@utils/validation';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPersonalBoards, toggleModal, addNewBoard } from '@main/store/workspace-slice';
-import { selectPersonalBoards, isOpenModalSelector } from '@store/selectors';
+
 import { WorkspaceItem } from './WorkspaceItem';
+import { selectPersonalBoards, isOpenModalSelector } from '../../../../store/selectors';
+import { CREATEBOARD_VALUES } from '../../../../utils/validation';
+import { getPersonalBoards, addNewBoard, toggleModal } from '../../store/workspace-slice';
+import { ModalCreating } from '../../../../components/Modals/ModalCreating';
 
 export const Workspace = () => {
   const { workspace }: any = useParams();

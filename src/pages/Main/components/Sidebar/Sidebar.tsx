@@ -1,11 +1,19 @@
 import React from 'react';
 import { Box, Center } from '@chakra-ui/react';
 import DayPicker from 'react-day-picker';
-import 'react-day-picker/lib/style.css';
-import { workspace, teamBoard, personalBoard, setting, logout } from '@constants/icon-link';
-import { logoutUser } from '@auth/store/user-slice';
 import { useDispatch } from 'react-redux';
+
+import 'react-day-picker/lib/style.css';
+
 import { SidebarLinks } from './SidebarLinks';
+import {
+  workspace,
+  teamBoard,
+  personalBoard,
+  setting,
+  logout,
+} from '../../../../constants/icon-link';
+import { logoutUser } from '../../../Auth/store/user-slice';
 
 export const Sidebar = () => {
   const dispatch = useDispatch();

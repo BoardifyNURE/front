@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Box, Checkbox, Image, Text } from '@chakra-ui/react';
-import { removeTodo, completeTodo } from '@board/store/task-slice';
-import { deleteIcon } from '@constants/icon-link';
 import { useDispatch } from 'react-redux';
+
+import { deleteIcon } from '../../../../../constants/icon-link';
+import { removeTodo, completeTodo } from '../../../store/task-slice';
 
 interface IProps {
   todoName: string;

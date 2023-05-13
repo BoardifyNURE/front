@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Box, Image, Text } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 interface IProps {
   image: string;
@@ -11,7 +10,7 @@ interface IProps {
 }
 
 const defaultProps = {
-  logoutUser: () => {},
+  logoutUser: () => null,
 };
 
 export const SidebarLinks = ({ linkPath, image, linkText, logoutUser }: IProps) => (

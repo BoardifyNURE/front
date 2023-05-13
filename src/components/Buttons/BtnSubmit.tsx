@@ -1,11 +1,11 @@
 import React from 'react';
 import { Button } from '@chakra-ui/react';
 
-interface IProp {
+interface IProps {
   text: string;
 }
 
-export const BtnSubmit = ({ text }: IProp) => (
+export const BtnSubmit = ({ text }: IProps) => (
   <Button
     type="submit"
     bg="none"

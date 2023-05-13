@@ -1,4 +1,4 @@
-import { history } from '@constants/history';
+import { history } from '../constants/history';
 
 export const reorder = (list: number[], startIndex: number, endIndex: number) => {
   const result = Array.from(list);

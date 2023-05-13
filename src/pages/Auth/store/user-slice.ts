@@ -1,21 +1,19 @@
-import { history } from '@constants/history';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { supabase } from '../../../data/date-base';
+
 import { IUserState, ISingUpProps, ILoginProps } from './types';
+import { supabase } from '../../../data/date-base';
+import { history } from '../../../constants/history';
 
 const initialState: IUserState = {
   token: null,
-
   isLogin: false,
-
   ownerId: null,
-
   isLoading: false,
 };
 
 export const signupUser = createAsyncThunk<void, ISingUpProps, { rejectValue: string }>(
   'singup',
-  async ({ passwordConfirm, setFieldError, ...userData }, { rejectWithValue }) => {
+  async ({ setFieldError, ...userData }, { rejectWithValue }) => {
     try {
       const { user } = await supabase.auth.signUp(userData);
 

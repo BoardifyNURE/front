@@ -1,15 +1,16 @@
 import React from 'react';
+import { Box, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginUser } from '@auth/store/user-slice';
-import { Box, Text } from '@chakra-ui/react';
 import { Formik, Form } from 'formik';
-import { LOGIN_VALUES } from '@utils/validation';
-import { BtnSubmit } from '@reuse_button/BtnSubmit';
-import { IUserProps, IFormikError } from '@auth/store/types';
-import { loadingSelector } from '@store/selectors';
-import { BtnLoading } from '@components/Buttons/BtnLoading';
+
 import { InputForm } from './InputForm';
+import { BtnLoading } from '../../../components/Buttons/BtnLoading';
+import { BtnSubmit } from '../../../components/Buttons/BtnSubmit';
+import { loadingSelector } from '../../../store/selectors';
+import { LOGIN_VALUES } from '../../../utils/validation';
+import { IUserProps, IFormikError } from '../store/types';
+import { loginUser } from '../store/user-slice';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();

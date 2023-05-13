@@ -8,8 +8,9 @@ import {
   AlertDialogCloseButton,
 } from '@chakra-ui/react';
 import { Formik, Form, FormikValues, FormikHelpers } from 'formik';
-import { BtnSubmit } from '@reuse_button/BtnSubmit';
-import { InputForm } from '@auth/components/InputForm';
+
+import { InputForm } from '../../pages/Auth/components/InputForm';
+import { BtnSubmit } from '../Buttons/BtnSubmit';
 
 interface IProps {
   isOpen: boolean;

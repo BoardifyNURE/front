@@ -1,23 +1,18 @@
-import { RootState } from '@store/root-slice';
-import { httpService } from '@api/HttpService';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { saveChanges } from '@board/store/board-slice';
+
 import { ITaskState, IChecklist } from './types';
 import { setNum, findNeedIndex } from './helpers';
+import { httpService } from '../../../api/HttpService';
+import { RootState } from '../../../store/root-slice';
+import { saveChanges } from './board-slice';
 
 const initialState: ITaskState = {
   taskId: null,
-
   checklistId: null,
-
   isOpenCheckList: false,
-
   description: '',
-
   checklist: [],
-
   todoIdInChecklist: {},
-
   todo: {},
 };
 

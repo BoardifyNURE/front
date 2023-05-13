@@ -1,6 +1,6 @@
 import axios, { AxiosInstance, Method } from 'axios';
 
-import { history } from '@constants/history';
+import { history } from '../constants/history';
 
 interface IMethod {
   path: string;

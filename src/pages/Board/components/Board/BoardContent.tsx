@@ -1,12 +1,13 @@
 import React from 'react';
 import { Grid, Box, Text, Link, Input, Button, useDisclosure } from '@chakra-ui/react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addNewTask, getCurrentColumn } from '@board/store/board-slice';
-import { selectCurrentBoard, selectBoardColumns } from '@store/selectors';
 import { Droppable } from 'react-beautiful-dnd';
-import { ModalCreating } from '@reuse_modal/ModalCreating';
-import { CREATETASK_VALUES } from '@utils/validation';
+
 import { BoardColumn } from './BoardColumn';
+import { ModalCreating } from '../../../../components/Modals/ModalCreating';
+import { selectCurrentBoard, selectBoardColumns } from '../../../../store/selectors';
+import { CREATETASK_VALUES } from '../../../../utils/validation';
+import { addNewTask, getCurrentColumn } from '../../store/board-slice';
 
 interface IProps {
   createColumn: () => void;

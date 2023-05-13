@@ -1,15 +1,17 @@
 import React from 'react';
+import { Box, Text } from '@chakra-ui/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Form, Formik } from 'formik';
-import { Box, Text } from '@chakra-ui/react';
-import { signupUser } from '@auth/store/user-slice';
-import { BtnLoading } from '@components/Buttons/BtnLoading';
-import { loadingSelector } from '@store/selectors';
+
+import '../../../styles/styles.scss';
+
 import { SIGN_VALUES, SIGN_VALIDATION } from '../../../utils/validation';
 import { IUserProps, IFormikError } from '../store/types';
 import { BtnSubmit } from '../../../components/Buttons/BtnSubmit';
+import { BtnLoading } from '../../../components/Buttons/BtnLoading';
+import { loadingSelector } from '../../../store/selectors';
+import { signupUser } from '../store/user-slice';
 import { InputForm } from './InputForm';
-import '@styles/styles.scss';
 
 export const SingUpForm = () => {
   const dispatch = useDispatch();

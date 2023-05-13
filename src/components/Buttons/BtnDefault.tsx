@@ -1,9 +1,15 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from '@chakra-ui/react';
 
-export const BtnDefault = ({ label, background, onClick, type }) => (
+interface IProps {
+  label?: string;
+  background: string;
+  type: 'button' | 'submit' | 'reset';
+  onClick: () => void;
+}
+
+export const BtnDefault = ({ label, background, onClick, type }: IProps) => (
   <Button
     fontWeight="light"
     borderRadius="none"

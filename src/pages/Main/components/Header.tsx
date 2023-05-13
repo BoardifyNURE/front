@@ -1,12 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Box, Grid, Center, Image, Text, Wrap, WrapItem } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { homeIcon } from '@constants/icon-link';
-import { CreateNewBoardButton } from '@components/Buttons/CreateNewBoardButton';
-import { BtnProfile } from '@reuse_button/BtnProfile';
-import { ownerIdSelector } from '@store/selectors';
-import { toggleModal } from '@main/store/workspace-slice';
+
+import { BtnProfile } from '../../../components/Buttons/BtnProfile';
+import { CreateNewBoardButton } from '../../../components/Buttons/CreateNewBoardButton';
+import { homeIcon } from '../../../constants/icon-link';
+import { ownerIdSelector } from '../../../store/selectors';
+import { toggleModal } from '../store/workspace-slice';
 
 export const Header = () => {
   const dispatch = useDispatch();
