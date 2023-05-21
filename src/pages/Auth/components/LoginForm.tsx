@@ -1,23 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Formik, Form } from 'formik';
 
+import { history } from '../../../constants/history';
 import { InputForm } from './InputForm';
 import { BtnLoading } from '../../../components/Buttons/BtnLoading';
 import { BtnSubmit } from '../../../components/Buttons/BtnSubmit';
-import { loadingSelector } from '../../../store/selectors';
-import { LOGIN_VALUES } from '../../../utils/validation';
-import { IUserProps, IFormikError } from '../store/types';
-import { loginUser } from '../store/user-slice';
+import { IFormikError } from '../store/types';
+import { LoginDto } from '../../../api/types';
+import { apiService } from '../../../api/ApiService';
+import { login } from '../store/user-slice';
+import { authSelector } from '../../../store/selectors';
 
 export const LoginForm = () => {
-  const dispatch = useDispatch();
-  const isLoading = useSelector(loadingSelector);
+  if (useSelector(authSelector)) {
+    history.push('/');
+  }
 
-  const loginUserHandler = (data: IUserProps, { setFieldError }: IFormikError) => {
-    dispatch(loginUser({ ...data, setFieldError }));
+  const dispatch = useDispatch();
+
+  const [loading, setLoading] = useState(false);
+
+  const loginHandler = async (dto: LoginDto, { setFieldError }: IFormikError) => {
+    setLoading(true);
+
+    try {
+      const { data, error } = await apiService.login(dto);
+
+      if (error) {
+        throw new Error(error);
+      }
+
+      if (!data?.accessToken) {
+        throw new Error('Something went wrong');
+      }
+
+      apiService.setAccessToken(data.accessToken);
+
+      const { data: user } = await apiService.getUser();
+
+      if (!user?.id) {
+        throw new Error('Something went wrong');
+      }
+
+      dispatch(login(user));
+    } catch (error: any) {
+      setFieldError('password', error.message);
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -32,12 +65,18 @@ export const LoginForm = () => {
         TRELLO
       </Text>
       <hr />
-      <Formik initialValues={LOGIN_VALUES} onSubmit={loginUserHandler}>
+      <Formik
+        initialValues={{
+          email: '',
+          password: '',
+        }}
+        onSubmit={loginHandler}
+      >
         {() => (
           <Form className="formic-form">
             <InputForm name="email" type="email" placeholder="Email" />
             <InputForm name="password" type="password" placeholder="Password" />
-            {isLoading ? <BtnLoading /> : <BtnSubmit text="Login" />}
+            {loading ? <BtnLoading /> : <BtnSubmit text="Login" />}
           </Form>
         )}
       </Formik>

@@ -11,9 +11,9 @@ import {
   teamBoard,
   personalBoard,
   setting,
-  logout,
+  logoutIcon,
 } from '../../../../constants/icon-link';
-import { logoutUser } from '../../../Auth/store/user-slice';
+import { logout } from '../../../Auth/store/user-slice';
 
 export const Sidebar = () => {
   const dispatch = useDispatch();
@@ -30,8 +30,8 @@ export const Sidebar = () => {
       <SidebarLinks linkPath="#" image={setting} linkText="Setting" />
       <SidebarLinks
         linkPath="/login"
-        logoutUser={() => dispatch(logoutUser())}
-        image={logout}
+        logoutUser={() => dispatch(logout())}
+        image={logoutIcon}
         linkText="Log Out"
       />
     </Box>

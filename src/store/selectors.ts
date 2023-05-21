@@ -2,10 +2,8 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import { RootState } from './root-slice';
 
-export const authSelector = (state: RootState) => state.user.isLogin;
-export const ownerIdSelector = (state: RootState) => state.user.ownerId;
-export const tokenSelector = (state: RootState) => state.user.token;
-export const loadingSelector = (state: RootState) => state.user.isLoading;
+export const authSelector = (state: RootState) => state.user.id;
+export const ownerIdSelector = (state: RootState) => state.user.id;
 
 export const isOpenModalSelector = (state: RootState) => state.workspace.isOpenModal;
 export const isOpenChecklistSelector = (state: RootState) => state.task.isOpenCheckList;

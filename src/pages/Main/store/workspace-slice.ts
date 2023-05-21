@@ -12,13 +12,13 @@ const initialState: IWorkspaceState = {
 export const getPersonalBoards = createAsyncThunk<any, void, { state: RootState }>(
   'personalBoards',
   async (_, { getState }) => {
-    const { ownerId } = getState().user;
+    const { id } = getState().user;
 
-    if (ownerId) {
+    if (id) {
       const { data: Board } = await supabase
         .from('Board')
         .select('*')
-        .match({ user_id: ownerId, type: 'personal' });
+        .match({ user_id: id, type: 'personal' });
 
       return Board;
     }
@@ -28,11 +28,11 @@ export const getPersonalBoards = createAsyncThunk<any, void, { state: RootState 
 export const addNewBoard = createAsyncThunk<any, string, { state: RootState }>(
   'addNewBoard',
   async (boardName, { getState }) => {
-    const { ownerId } = getState().user;
+    const { id } = getState().user;
 
     const { data, error } = await supabase
       .from('Board')
-      .insert([{ name: boardName, type: 'personal', user_id: ownerId }]);
+      .insert([{ name: boardName, type: 'personal', user_id: id }]);
 
     const newBoard = data?.reduce((acc: any, item: any) => item, {});
 

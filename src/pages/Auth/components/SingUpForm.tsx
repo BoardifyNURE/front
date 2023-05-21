@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,20 +6,51 @@ import { Form, Formik } from 'formik';
 
 import '../../../styles/styles.scss';
 
-import { SIGN_VALUES, SIGN_VALIDATION } from '../../../utils/validation';
-import { IUserProps, IFormikError } from '../store/types';
+import { history } from '../../../constants/history';
+import { IFormikError } from '../store/types';
 import { BtnSubmit } from '../../../components/Buttons/BtnSubmit';
 import { BtnLoading } from '../../../components/Buttons/BtnLoading';
-import { loadingSelector } from '../../../store/selectors';
-import { signupUser } from '../store/user-slice';
 import { InputForm } from './InputForm';
+import { apiService } from '../../../api/ApiService';
+import { SignUpDto } from '../../../api/types';
+import { authSelector } from '../../../store/selectors';
 
 export const SingUpForm = () => {
-  const dispatch = useDispatch();
-  const isLoading = useSelector(loadingSelector);
+  if (useSelector(authSelector)) {
+    history.push('/');
+  }
 
-  const registerUser = (data: IUserProps, { setFieldError }: IFormikError) => {
-    dispatch(signupUser({ ...data, setFieldError }));
+  const [loading, setLoading] = useState(false);
+
+  const signUpUser = async (
+    dto: SignUpDto & { confirmPassword: string },
+    { setFieldError }: IFormikError
+  ) => {
+    setLoading(true);
+
+    try {
+      if (dto.password !== dto.confirmPassword) {
+        throw new Error("Passwords don't match");
+      }
+
+      const { data, error } = await apiService.signUp(dto);
+
+      if (error) {
+        throw new Error(error);
+      }
+
+      if (!data?.id) {
+        throw new Error('Something went wrong');
+      }
+
+      apiService.setAccessToken(data.id);
+
+      history.push('/login');
+    } catch (error: any) {
+      setFieldError('confirmPassword', error.message);
+    }
+
+    setLoading(false);
   };
   return (
     <Box display="flex" flexDirection="column" w="28rem" h="23rem" bg="#dbdbdb60" borderRadius="xl">
@@ -36,17 +67,25 @@ export const SingUpForm = () => {
       </Text>
       <hr />
       <Formik
-        initialValues={SIGN_VALUES}
-        validationSchema={SIGN_VALIDATION}
-        onSubmit={registerUser}
+        initialValues={{
+          firstName: '',
+          lastName: '',
+          email: '',
+          username: '',
+          password: '',
+          confirmPassword: '',
+        }}
+        onSubmit={signUpUser}
       >
         {() => (
           <Form className="formic-form">
+            <InputForm name="firstName" type="text" placeholder="First name" />
+            <InputForm name="lastName" type="text" placeholder="Last name" />
             <InputForm name="email" type="email" placeholder="Email" />
-            <InputForm name="fullName" type="text" placeholder="Name" />
+            <InputForm name="username" type="test" placeholder="Username" />
             <InputForm name="password" type="password" placeholder="Password" />
-            <InputForm name="passwordConfirm" type="password" placeholder="Confirm password" />
-            {isLoading ? <BtnLoading /> : <BtnSubmit text="Sing Up" />}
+            <InputForm name="confirmPassword" type="password" placeholder="Confirm password" />
+            {loading ? <BtnLoading /> : <BtnSubmit text="Sing Up" />}
           </Form>
         )}
       </Formik>

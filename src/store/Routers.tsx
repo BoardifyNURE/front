@@ -22,7 +22,7 @@ export const Routers = () => (
     <Route exact path="/login">
       <Login />
     </Route>
-    <Route path="/singup">
+    <Route path="/signup">
       <SingUp />
     </Route>
     <Route path="*">

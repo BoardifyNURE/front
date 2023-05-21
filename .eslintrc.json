@@ -29,6 +29,8 @@
     "@typescript-eslint/no-use-before-define": ["error"],
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-explicit-any": "off",
+    "no-empty": "off",
+    "class-methods-use-this": "off",
     "import/prefer-default-export": "off",
     "react/jsx-props-no-spreading": "off",
     "no-underscore-dangle": "off",

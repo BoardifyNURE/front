@@ -14,11 +14,13 @@ export interface IInput {
 export interface IFormikError {
   setFieldError: (field: string, message: string | undefined) => void;
 }
+
 export interface IUserState {
-  token: string | null;
-  isLogin: boolean;
-  isLoading: boolean;
-  ownerId: string | null;
+  id?: string;
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  username?: string;
 }
 
 export interface IAuth {

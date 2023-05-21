@@ -3,10 +3,10 @@ import { Route, Redirect, RouteProps } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { authSelector } from './selectors';
+import { ownerIdSelector } from './selectors';
 
 export const PrivateRouter = ({ path, children }: RouteProps) => {
-  const isLogin = useSelector(authSelector);
+  const isLogin = useSelector(ownerIdSelector);
 
   if (!isLogin) {
     return <Redirect to="/login" />;

@@ -64,14 +64,14 @@ export const getCurrentColumn = createAsyncThunk<IColumn, number>(
 export const getCurrentItems = createAsyncThunk<any, void, { state: RootState }>(
   'getCurrentItems',
   async (_, { getState, dispatch }) => {
-    const { ownerId } = getState().user;
+    const { id } = getState().user;
     const { boardId } = getState().board;
 
     try {
       // const currentBoard = await httpService.get({
-      //   path: `/boards?ownerId=${ownerId}&id=${boardId}`,
+      //   path: `/boards?id=${id}&id=${boardId}`,
       // });
-      const { data } = await supabase.from('Board').select('*').match({ user_id: ownerId });
+      const { data } = await supabase.from('Board').select('*').match({ user_id: id });
 
       await dispatch(getColumns(Number(boardId)));
       await dispatch(getTasks(Number(boardId)));
