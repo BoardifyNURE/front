@@ -15,7 +15,7 @@ import { apiService } from '../../../api/ApiService';
 import { SignUpDto } from '../../../api/types';
 import { authSelector } from '../../../store/selectors';
 
-export const SingUpForm = () => {
+export const SignUpForm = () => {
   if (useSelector(authSelector)) {
     history.push('/');
   }
@@ -85,7 +85,7 @@ export const SingUpForm = () => {
             <InputForm name="username" type="test" placeholder="Username" />
             <InputForm name="password" type="password" placeholder="Password" />
             <InputForm name="confirmPassword" type="password" placeholder="Confirm password" />
-            {loading ? <BtnLoading /> : <BtnSubmit text="Sing Up" />}
+            {loading ? <BtnLoading /> : <BtnSubmit text="Sign Up" />}
           </Form>
         )}
       </Formik>

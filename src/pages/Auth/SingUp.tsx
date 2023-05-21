@@ -1,10 +1,10 @@
 import React from 'react';
 import { Flex, Box, Image } from '@chakra-ui/react';
 
-import { SingUpForm } from './components/SingUpForm';
 import { diagram, people } from '../../constants/icon-link';
+import { SignUpForm } from './components/SingUpForm';
 
-export const SingUp = () => (
+export const SignUp = () => (
   <Flex
     flexDirection="column"
     alignItems="center"
@@ -17,7 +17,7 @@ export const SingUp = () => (
         <Image height="22.5rem" alt="diagram" src={diagram} />
       </Box>
       <Box display="flex" justifyContent="center" w="75%">
-        <SingUpForm />
+        <SignUpForm />
       </Box>
     </Box>
     <Box>

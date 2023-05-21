@@ -37,7 +37,7 @@ export interface IAuth {
   };
 }
 
-export interface ISingUpProps extends IFormikError, IUserProps {
+export interface ISignUpProps extends IFormikError, IUserProps {
   passwordConfirm?: string;
 }
 export interface ILoginProps extends IFormikError {

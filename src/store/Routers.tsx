@@ -3,7 +3,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { PrivateRouter } from './PrivateRouter';
 import { Login } from '../pages/Auth/Login';
-import { SingUp } from '../pages/Auth/SingUp';
+import { SignUp } from '../pages/Auth/SingUp';
 import { Board } from '../pages/Board/Board';
 import { Error404 } from '../pages/Error404';
 import { Main } from '../pages/Main/Main';
@@ -23,7 +23,7 @@ export const Routers = () => (
       <Login />
     </Route>
     <Route path="/signup">
-      <SingUp />
+      <SignUp />
     </Route>
     <Route path="*">
       <Error404 />
