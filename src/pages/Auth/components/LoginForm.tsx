@@ -62,7 +62,7 @@ export const LoginForm = () => {
         lineHeight="55px"
         marginTop="1rem"
       >
-        TRELLO
+        BOARDIFY
       </Text>
       <hr />
       <Formik

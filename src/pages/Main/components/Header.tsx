@@ -35,7 +35,7 @@ export const Header = () => {
         </Box>
         <Center>
           <Text color="black" fontFamily="'Rokkitt', serif" fontWeight=" 600" fontSize="28px">
-            TRELLO
+            BOARDIFY
           </Text>
         </Center>
         <Box display="flex" alignItems="center" justifyContent="flex-end">
